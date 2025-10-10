@@ -229,3 +229,7 @@ To add a new feature:
 ---
 
 ## License
+
+Copyright (c) 2025 \[Stratoson LLC\]
+
+Licensed under the MIT License. See the LICENSE file for details.
