@@ -14,16 +14,16 @@ Clubfig is actively maintained and open to contributions! We welcome pull reques
 
 ## Table of Contents
 
- 1. Overview
- 2. Features
- 3. Architecture
- 4. Getting Started
- 5. Installation
- 6. Configuration
- 7. Contributing
- 8. API Documentation
- 9. Frontend Guide
-10. License
+ 1. [Overview](#overviwe)
+ 2. [Features](#features)
+ 3. [Architecture](#architecture)
+ 4. [Getting Started](#getting-started)
+ 5. [Installation](#installation)
+ 6. [Configuration](#configuration)
+ 7. [Contributing](#contributing)
+ 8. [API Documentation](#api-documentation)
+ 9. [Frontend Guide](#frontend-guide)
+10. [License](#license)
 
 ---
 
