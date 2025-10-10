@@ -232,4 +232,4 @@ To add a new feature:
 
 Copyright (c) 2025 \[Stratoson LLC\]
 
-Licensed under the MIT License. See the LICENSE file for details.
+Licensed under the Apache-2.0 License. See the LICENSE file for details.
