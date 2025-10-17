@@ -1,5 +1,9 @@
+using Clubfig.Infrastructure.Data;
+using Clubfig.Infrastructure.Repositories;
 using ClubFig.Web;
 using ClubFig.Web.Components;
+using ClubFig.Web.Middleware;
+using ClubFig.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,15 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Register data access
+builder.Services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
+
+// Register repositories
+builder.Services.AddScoped<ITenantRepository, TenantRepository>();
+
+// Register tenant context (scoped per request)
+builder.Services.AddScoped<TenantContext>();
 
 builder.Services.AddOutputCache();
 
@@ -35,6 +48,8 @@ app.UseAntiforgery();
 app.UseOutputCache();
 
 app.MapStaticAssets();
+
+app.UseMiddleware<TenantResolutionMiddleware>();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
