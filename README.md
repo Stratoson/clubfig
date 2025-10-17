@@ -32,7 +32,7 @@ Clubfig is actively maintained and open to contributions! We welcome pull reques
 Clubfig is built to simplify the complexities of managing memberships for clubs, associations, or community groups. Whether you're handling registrations, tracking events, or managing communications, Clubfig provides an intuitive interface and powerful backend to get the job done efficiently.
 
 - **Backend**: A .NET Core API for secure, scalable data management.
-- **Frontend**: A Vue.js single-page application for a responsive and user-friendly experience.
+- **Frontend**: A Blazor single-page application for a responsive and user-friendly experience.
 - **Focus**: Developer-friendly setup, modular design, and extensibility.
 
 ---
