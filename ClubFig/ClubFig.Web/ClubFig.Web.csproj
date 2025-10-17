@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Clubfig.Infrastructure\Clubfig.Infrastructure.csproj" />
     <ProjectReference Include="..\ClubFig.ServiceDefaults\ClubFig.ServiceDefaults.csproj" />
   </ItemGroup>
 

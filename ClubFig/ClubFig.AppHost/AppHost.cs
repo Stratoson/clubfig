@@ -1,10 +1,12 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sqlServer = builder.AddSqlServer("sql")
+var password = builder.AddParameter("sql-password", secret: true);
+
+var sqlServer = builder.AddSqlServer("sql", password, port: 1433)
     .WithDataVolume("clubfig-sql-data");
 
-var masterDb = sqlServer.AddDatabase("clubfig-master", "ClubfigMaster");
-var tenantsDb = sqlServer.AddDatabase("clubfit-tenanst", "ClubfigTenants");
+var masterDb = sqlServer.AddDatabase("ClubfigMaster", "ClubfigMaster");
+var tenantsDb = sqlServer.AddDatabase("ClubfigTenants", "ClubfigTenants");
 
 var apiService = builder.AddProject<Projects.ClubFig_ApiService>("apiservice")
     .WithReference(masterDb)

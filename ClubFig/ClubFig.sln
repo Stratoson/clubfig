@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0 d17.14
+VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubFig.AppHost", "ClubFig.AppHost\ClubFig.AppHost.csproj", "{2F68DE7B-08C3-48F2-BB00-C1D47DE2B546}"
 EndProject
@@ -11,6 +11,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubFig.Web", "ClubFig.Web\ClubFig.Web.csproj", "{90B713E4-1342-2ED6-8239-E7BAE2CC6CDB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubFig.Tests", "ClubFig.Tests\ClubFig.Tests.csproj", "{E264EEE0-0EA7-D311-B206-680BF998CE0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clubfig.Infrastructure", "Clubfig.Infrastructure\Clubfig.Infrastructure.csproj", "{CAC5C0D6-50A2-4FA2-89E7-38BEA8E6B17D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clubfig.Core", "Clubfig.Core\Clubfig.Core.csproj", "{19CD7F0A-A56A-4FE2-822A-01838036438A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clubfig.Shared", "Clubfig.Shared\Clubfig.Shared.csproj", "{94FEFD6D-DCEB-4981-A972-F732CB5C7272}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +44,18 @@ Global
 		{E264EEE0-0EA7-D311-B206-680BF998CE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E264EEE0-0EA7-D311-B206-680BF998CE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E264EEE0-0EA7-D311-B206-680BF998CE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC5C0D6-50A2-4FA2-89E7-38BEA8E6B17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC5C0D6-50A2-4FA2-89E7-38BEA8E6B17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC5C0D6-50A2-4FA2-89E7-38BEA8E6B17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC5C0D6-50A2-4FA2-89E7-38BEA8E6B17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19CD7F0A-A56A-4FE2-822A-01838036438A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CD7F0A-A56A-4FE2-822A-01838036438A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CD7F0A-A56A-4FE2-822A-01838036438A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CD7F0A-A56A-4FE2-822A-01838036438A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94FEFD6D-DCEB-4981-A972-F732CB5C7272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94FEFD6D-DCEB-4981-A972-F732CB5C7272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94FEFD6D-DCEB-4981-A972-F732CB5C7272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94FEFD6D-DCEB-4981-A972-F732CB5C7272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

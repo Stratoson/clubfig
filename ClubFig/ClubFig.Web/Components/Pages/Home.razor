@@ -1,7 +1,26 @@
 ﻿@page "/"
+@using ClubFig.Web.Services
+@inject TenantContext TenantContext
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Welcome to Clubfig</h1>
 
-Welcome to your new app.
+@if (TenantContext.TenantId.HasValue)
+{
+    <div class="alert alert-success">
+        <h3>@TenantContext.OrganizationName</h3>
+        <p>Tenant Code: <strong>@TenantContext.TenantCode</strong></p>
+        <p>Tenant ID:<code>@TenantContext.TenantId</code></p>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        <p>No tenant detected. Please access via subdomain (e.g., acme.localhost:5000)</p>
+    </div>
+}
+
+@code {
+    // Component logic here
+}
