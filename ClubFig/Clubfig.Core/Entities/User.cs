@@ -19,7 +19,14 @@ namespace Clubfig.Core.Entities
         public string? PasswordHash { get; set; }
         public bool IsEmailConfirmed { get; set; }
         public bool IsPhoneConfirmed { get; set; }
-        public bool IsActicve { get; set; }
+        public bool IsActive { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset? LastLoginDate { get; set; }
+        public int FailedLoginAttempts { get; set; }
+        public bool IsLocked { get; set; }
+        public DateTimeOffset? LockoutEnd { get; set; }
+
+        // Navigation
+        public Organization? Organization { get; set; }
     }
 }

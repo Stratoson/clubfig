@@ -1,23 +1,49 @@
-﻿@inherits LayoutComponentBase
+﻿@using ClubFig.Web.Services
+@inherits LayoutComponentBase
+@inject TenantContext TenantContext
+@inject NavigationManager Navigation
+@inject IDashboardService DashboardService
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+<div class="app-container" style="@BrandingStyle">
+    <NavMenu />
+    
+    <div class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn btn-link sidebar-toggle" @onclick="ToggleSidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h4 class="page-title mb-0">@PageTitle</h4>
+            </div>
+            <div class="topbar-right">
+                <@UserMenu />
+            </div>
+        </header>
+        
+        <main class="content-area">
             @Body
-        </article>
-    </main>
+        </main>
+    </div>
 </div>
 
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
+@code {
+    private string PageTitle = "Dashboard";
+    private string BrandingStyle = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (TenantContext.TenantId.HasValue)
+        {
+            var dashboardData = await DashboardService.GetDashboardDataAsync(
+                TenantContext.TenantId.Value, 
+                0); // TODO: Get actual user ID from auth
+
+            BrandingStyle = $"--primary-color: {dashboardData.PrimaryColor}; --secondary-color: {dashboardData.SecondaryColor};";
+        }
+    }
+
+    private void ToggleSidebar()
+    {
+        // TODO: Implement sidebar toggle
+    }
+}

@@ -1,12 +1,14 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var password = builder.AddParameter("sql-password", secret: true);
-
 var sqlServer = builder.AddSqlServer("sql", password, port: 1433)
     .WithDataVolume("clubfig-sql-data");
 
 var masterDb = sqlServer.AddDatabase("ClubfigMaster", "ClubfigMaster");
 var tenantsDb = sqlServer.AddDatabase("ClubfigTenants", "ClubfigTenants");
+
+var redis = builder.AddRedis("redis")
+    .WithDataVolume("club-redis-data");
 
 var apiService = builder.AddProject<Projects.ClubFig_ApiService>("apiservice")
     .WithReference(masterDb)
@@ -19,6 +21,7 @@ builder.AddProject<Projects.ClubFig_Web>("webfrontend")
     .WithReference(apiService)
     .WithReference(masterDb)
     .WithReference(tenantsDb)
+    .WithReference(redis)
     .WaitFor(apiService);
 
 builder.Build().Run();
