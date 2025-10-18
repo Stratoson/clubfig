@@ -9,6 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.5.1" />
     <PackageReference Include="Aspire.Microsoft.Data.SqlClient" Version="9.5.1" />
+    <PackageReference Include="Aspire.StackExchange.Redis" Version="9.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
   </ItemGroup>
 

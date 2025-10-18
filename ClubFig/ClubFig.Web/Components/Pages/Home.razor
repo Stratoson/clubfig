@@ -1,26 +1,19 @@
 ﻿@page "/"
 @using ClubFig.Web.Services
+@inject NavigationManager Navigation
 @inject TenantContext TenantContext
-
-<PageTitle>Home</PageTitle>
-
-<h1>Welcome to Clubfig</h1>
-
-@if (TenantContext.TenantId.HasValue)
-{
-    <div class="alert alert-success">
-        <h3>@TenantContext.OrganizationName</h3>
-        <p>Tenant Code: <strong>@TenantContext.TenantCode</strong></p>
-        <p>Tenant ID:<code>@TenantContext.TenantId</code></p>
-    </div>
-}
-else
-{
-    <div class="alert alert-warning">
-        <p>No tenant detected. Please access via subdomain (e.g., acme.localhost:5000)</p>
-    </div>
-}
-
 @code {
-    // Component logic here
+    protected override void OnInitialized()
+    {
+        // Redirect to dashboard if tenant is identified
+        if (TenantContext.TenantId.HasValue)
+        {
+            Navigation.NavigateTo("/dashboard", forceLoad: true);
+        }
+        else
+        {
+            // Show tenant selection or error page
+            Navigation.NavigateTo("/login");
+        }
+    }
 }

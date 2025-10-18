@@ -13,6 +13,10 @@ namespace Clubfig.Core.Entities
         public required string OrganizationName { get; set; }
         public string? Description { get; set; }
         public string? Industry { get; set; }
+        public string? LogoUrl { get; set; }
+        public string? PrimaryColor { get; set; }
+        public string? SecondaryColor { get; set; }
+        public string? Website { get; set; }
         public bool? IsActive { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public int CreatedBy { get; set; }
